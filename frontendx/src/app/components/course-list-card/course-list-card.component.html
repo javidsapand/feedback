@@ -1,0 +1,7 @@
+<div>{{course.title}}</div>
+<div>{{course.description}}</div>
+<div>{{course.image?.src}}</div>
+<div>Current User Progress {{course.myProgress}}%</div>
+<button [innerHTML]="course.isApplaid ? 'You applied to this course':'Apply to this course' "></button>
+<button [innerHTML]="course.isOwner ? 'Your The Instractor':'Your Not The Instractor' "></button>
+

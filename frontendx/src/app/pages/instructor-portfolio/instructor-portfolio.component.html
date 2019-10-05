@@ -1,0 +1,5 @@
+<div>{{user | json}}</div>
+
+<br />
+<br />
+<app-course-list-card *ngFor="let course of user?.apppliedCourses?.edges" [course]="course.node"></app-course-list-card>

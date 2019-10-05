@@ -1,0 +1,20 @@
+<form [formGroup]="form">
+  <div>
+    <input required placeholder="e.g.,username" type="text" formControlName="username">
+  </div>
+  <div>
+    <input required placeholder="e.g., ●●●●●●●●" type="password" formControlName="password">
+  </div>
+  <div>
+    <input required placeholder="e.g.,first name" type="text" formControlName="firstName">
+  </div>
+  <div>
+    <input required placeholder="e.g.,last name" type="text" formControlName="lastName">
+  </div>
+  <div>
+    <input required placeholder="e.g.,email" type="text" formControlName="email">
+  </div>
+
+  <button type="submit" class="uk-button uk-button-primary uk-button-primary uk-width-1-1"
+    (click)="submit()">Signup</button>
+</form>
