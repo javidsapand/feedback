@@ -1,3 +1,9 @@
+
+<button class="link"></button>
+
+
 <p>{{apolloError$ | async | json}}</p>
-<p>{{onChange | async | json}}</p>
-<router-outlet></router-outlet>
+<h1>{{layout$ | async }}</h1>
+<app-empty-layout *ngIf="(layout$ | async) == 'EMPTY'"></app-empty-layout>
+<app-header-layout *ngIf="(layout$ | async) == 'HEADER'" ></app-header-layout>
+<app-sidebar-layout *ngIf="(layout$ | async) == 'SIDEBAR'"></app-sidebar-layout>

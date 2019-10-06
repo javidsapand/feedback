@@ -138,6 +138,7 @@ class Activity(models.Model):
 class Course(Model):
     activity = GenericRelation('Activity', related_query_name='course')
     name = models.CharField(max_length=150, null=True, blank=True)
+    description = models.TextField(blank=True , null=True)
     teachers = models.ManyToManyField(settings.AUTH_USER_MODEL , blank=True , related_name='teachers')
     students = models.ManyToManyField(settings.AUTH_USER_MODEL , blank=True, related_name='students')
     semester = models.ForeignKey('Semester',models.CASCADE, blank=True, null=True)
@@ -182,6 +183,7 @@ class Semester(Model):
 class Department(Model):
     activity = GenericRelation('Activity', related_query_name='department')
     name = models.CharField(max_length=150, null=True, blank=True)
+    description = models.TextField(blank=True , null=True)
     courses = models.ManyToManyField('Course' , blank=True)
 
     def __str__(self):
@@ -210,9 +212,10 @@ class Answer(Model):
 
 class Question(Model):
     activity = GenericRelation('Activity', related_query_name='question')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,models.CASCADE, blank=True, null=True)
     title = models.CharField(max_length=150, null=True, blank=True)
     description = models.TextField(blank=True , null=True)
-    answers = models.ManyToManyField(Answer, blank=True,related_name='answers')
+    answers = models.ManyToManyField(Answer, blank=True,related_name='questions')
 
     def __str__(self):
         return str(self.title)
@@ -222,10 +225,9 @@ class Question(Model):
 
 
 class SurveyResponse(Model):
-    activity = GenericRelation('Activity', related_query_name='response')
+    activity = GenericRelation('Activity', related_query_name='surveyresponse')
     user = models.ForeignKey(settings.AUTH_USER_MODEL,models.CASCADE, blank=True, null=True)
     description = models.TextField(blank=True , null=True)
-    parent = models.ForeignKey('self', models.CASCADE, blank=True, null=True)
     responses = models.ManyToManyField('self', blank=True)
 
     def __str__(self):
@@ -240,8 +242,8 @@ class SurveyResponse(Model):
 
 
 class Survey(Model):
-    activity = GenericRelation('Activity', related_query_name='thread')
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL,models.CASCADE, blank=True, null=True)
+    activity = GenericRelation('Activity', related_query_name='survey')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,models.CASCADE, blank=True, null=True)
     title = models.CharField(max_length=150, null=True, blank=True)
     description = models.TextField(blank=True , null=True)
     responses = models.ManyToManyField(SurveyResponse, blank=True)

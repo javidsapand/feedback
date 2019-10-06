@@ -11,7 +11,7 @@ import { LoginComponent } from './login.component';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
+    // FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild([
       {

@@ -11,6 +11,18 @@ import { FooterComponent } from './footer/footer.component';
 import { CourseListCardComponent} from './course-list-card/course-list-card.component';
 import { InstructorListCardComponent } from './instructor-list-card/instructor-list-card.component';
 import {ModuleListComponent} from './module-list/module-list.component';
+import { VideoPlayerComponent } from './video-player/video-player.component';
+
+
+
+
+import { VgCoreModule } from 'videogular2/compiled/core';
+import { VgControlsModule } from 'videogular2/compiled/controls';
+import { VgOverlayPlayModule } from 'videogular2/compiled/overlay-play';
+import { VgBufferingModule } from 'videogular2/compiled/buffering';
+
+
+
 
 @NgModule({
   declarations: [
@@ -24,10 +36,15 @@ import {ModuleListComponent} from './module-list/module-list.component';
     InstructorListCardComponent,
     CourseListCardComponent,
     ModuleListComponent,
-    ModuleListCardComponent
+    ModuleListCardComponent,
+    VideoPlayerComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule
   ],
   exports: [
     SubmoduleListCardComponent,
@@ -40,7 +57,8 @@ import {ModuleListComponent} from './module-list/module-list.component';
     InstructorListCardComponent,
     CourseListCardComponent,
     ModuleListComponent,
-    ModuleListCardComponent
+    ModuleListCardComponent,
+    VideoPlayerComponent
   ]
 })
 export class SharedModule { }

@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
-import {Actions} from '@ngrx/effects';
-@Injectable()
-export class AppEffects {
-  constructor(private actions$: Actions) { }
-}
+import { CourseDetailsEffects } from './course-details.effects';
+import { LayoutEffects } from './layouts.effects';
+import { UserEffects } from './user.effects';
+
+
+
+export const appEffects = [CourseDetailsEffects, LayoutEffects, UserEffects];

@@ -41,6 +41,7 @@
     "apollo-client": "^2.6.4",
     "apollo-link": "^1.2.13",
     "apollo-link-error": "^1.1.12",
+    "bootstrap": "^4.3.1",
     "core-js": "^3.2.1",
     "express": "^4.17.1",
     "graphql": "^14.5.5",
@@ -49,6 +50,7 @@
     "npm": "^6.11.3",
     "rxjs": "~6.5.3",
     "tslib": "^1.10.0",
+    "videogular2": "^7.0.1",
     "zone.js": "^0.10.2"
   },
   "devDependencies": {
@@ -56,6 +58,7 @@
     "@angular/cli": "~8.3.4",
     "@angular/compiler-cli": "~8.2.6",
     "@angular/language-service": "~8.2.6",
+    "@types/core-js": "^2.5.2",
     "@types/jasmine": "~3.4.0",
     "@types/jasminewd2": "~2.0.6",
     "@types/node": "~12.7.5",

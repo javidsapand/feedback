@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-
+import {Layouts} from './interfaces/app.interfaces'
 
 const routes: Routes = [
   {
@@ -21,7 +21,7 @@ const routes: Routes = [
   {
     path: 'course-details/:id',
     loadChildren: () => import('./pages/course-details/course-details.module').then(s => s.CourseDetailsModule),
-    data: { title: 'Course List' }
+    data: { title: 'Course Details', layout: Layouts.HEADER }
   },
   {
     path: 'course-inside',
@@ -31,7 +31,7 @@ const routes: Routes = [
   {
     path: 'course-list',
     loadChildren: () => import('./pages/course-list/course-list.module').then(s => s.CourseListModule),
-    data: { title: 'Course List' }
+    data: { title: 'Course List', layout: Layouts.SIDEBAR}
   },
   {
     path: 'instructor-portfilio/:id',
@@ -41,7 +41,7 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then(s => s.LoginModule),
-    data: { title: 'Course List' }
+    data: { title: 'Login', layout: Layouts.EMPTY }
   },
   {
     path: 'signup',

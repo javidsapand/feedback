@@ -6,17 +6,14 @@ import { Apollo } from 'apollo-angular';
 })
 export class ApolloService {
 
-  constructor(private apollo: Apollo) {}
-
-
-  public query(query: any , variables: Object) {
+  constructor(private apollo: Apollo) { }
+  public query(query: any, variables: Object) {
     return this.apollo
       .watchQuery({
         query: query,
         variables: variables,
       }).valueChanges;
   }
-
 
   public mutation(mutation: any, variables: Object) {
     return this.apollo

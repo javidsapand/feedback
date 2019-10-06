@@ -12,12 +12,28 @@ export interface CourseDetailsState {
 
 
 export interface UserState {
-    user: any;
+    username?: any;
+    token?: any;
+    expiresOn?: any;
+    logged?: boolean;
 }
 
 
 export interface Credential {
     username: String;
     password: String;
+}
+
+
+export enum Layouts {
+    EMPTY = 'EMPTY',
+    SIDEBAR = 'SIDEBAR',
+    HEADER = 'HEADER',
+    BOTH = 'BOTH',
+}
+
+
+export interface Layout {
+    layout: Layouts;
 }
 

@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../../components/shared.module';
 import { CourseDetailsComponent } from './course-details.component';
 import {PipesModule} from '../../pipes/pipes.module';
-
 @NgModule({
   imports: [
     CommonModule,

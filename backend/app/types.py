@@ -151,6 +151,7 @@ class QuestionT(DjangoObjectType):
     def get_node(cls, info, id):
         return Question.objects.get(id=id)
 
+
 class SurveyResponseT(DjangoObjectType):
     class Meta:
         model = SurveyResponse
@@ -160,6 +161,7 @@ class SurveyResponseT(DjangoObjectType):
     @classmethod
     def get_node(cls, info, id):
         return SurveyResponse.objects.get(id=id)
+
 
 class SurveyT(DjangoObjectType):
     class Meta:

@@ -1,7 +1,11 @@
 
-import { ActionReducerMap, ActionReducer, MetaReducer, createFeatureSelector } from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { RouterState } from '../interfaces/app.interfaces';
+
 import * as fromRouter from '@ngrx/router-store';
-import { RouterState} from '../interfaces/app.interfaces';
+import * as fromAppInterfaces from '../interfaces/app.interfaces';
+
+
 
 export const selectRouter = createFeatureSelector<
   RouterState,
@@ -16,3 +20,9 @@ export const {
   selectRouteData,      // select the current route data
   selectUrl,            // select the current url
 } = fromRouter.getSelectors(selectRouter);
+
+
+
+export const layoutSelectorFn = (state: fromAppInterfaces.Layout) => state.layout;
+export const layoutFeatureSelector = createFeatureSelector<fromAppInterfaces.Layout>('layout');
+export const selectActiveLayout = createSelector(layoutFeatureSelector, layoutSelectorFn);

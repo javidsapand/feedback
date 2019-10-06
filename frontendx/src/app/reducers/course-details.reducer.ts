@@ -12,14 +12,13 @@ export const initialState: fromAppInterfaces.CourseDetailsState = {
 
 const courseDetialsReducer = createReducer(
   initialState,
-  on(fromCourseDetailsActions.loadCourseById, state => ({ ...state })),
-  on(fromCourseDetailsActions.loadCourseByIdSucceed, (state, apollo: ApolloQueryResult<any> ) => ({
-        ...state,
-        courseById: apollo.data.courseById
-      })),
-
+  on(fromCourseDetailsActions.loadCourseByIdSucceed,
+    (state, apollo: ApolloQueryResult<any>) => ({
+      ...state,
+      courseById: apollo.data.courseById
+    })),
 );
 
 export function reducer(state: fromAppInterfaces.CourseDetailsState | undefined, action: Action) {
-  return courseDetialsReducer(state , action);
+  return courseDetialsReducer(state, action);
 }
