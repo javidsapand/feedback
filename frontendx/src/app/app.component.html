@@ -1,6 +1,8 @@
 
-<button class="link"></button>
+<button class="link" [loading]="true"></button>
 
+
+<app-list></app-list>
 
 <p>{{apolloError$ | async | json}}</p>
 <h1>{{layout$ | async }}</h1>

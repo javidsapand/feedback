@@ -24,7 +24,7 @@ import { SidebarLayoutComponent } from './layouts/sidebar-layout/sidebar-layout.
 
 
 
-import {ButtonComponent} from './ui-components/buttons/button';
+import {UiComponentsModule} from './ui-components/ui-components.module';
 
 
 @NgModule({
@@ -33,7 +33,6 @@ import {ButtonComponent} from './ui-components/buttons/button';
     EmptyLayoutComponent,
     HeaderLayoutComponent,
     SidebarLayoutComponent,
-    ButtonComponent,
   ],
   imports: [
     CommonModule,
@@ -53,6 +52,8 @@ import {ButtonComponent} from './ui-components/buttons/button';
     EffectsModule.forRoot(appEffects),
     StoreRouterConnectingModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    // ui conponents module just for testin
+    UiComponentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,3 @@
-<p>list works!</p>
+<p *ngFor = "let obj of (dataSource.entitySubject | async)">{{obj | json}}</p>
+<app-sortby></app-sortby>
+<app-paginator></app-paginator>
